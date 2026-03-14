@@ -22,14 +22,16 @@ O projeto conta com uma interface estilizada para oferecer uma boa experiência 
 * **Paleta de Cores**: Fundo em tons de azul profundo com destaques em ciano para os resultados.
 * **Interatividade**: Botões com transições suaves e efeito de escala ao passar o mouse.
 
----
+
 ## 📖 Como Executar
 
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/GuiPastorello/Guilherme-Machine-1.0.0.git](https://github.com/GuiPastorello/Guilherme-Machine-1.0.0.git)
-   Abra o arquivo GuilhermeMachine.html em qualquer navegador moderno.
+   git clone https://github.com/GuiPastorello/Guilherme-Machine-1.0.0.git
 
-2. Selecione a base de origem, insira o valor e clique em Converter.
----
-Desenvolvido por Guilherme.
+2. Abra o arquivo GuilhermeMachine.html em qualquer navegador moderno.
+
+3. Selecione a base de origem, insira o valor e clique em Converter.
+
+##
+Desenvolvido por Guilherme, aluno do 1CCOA da SPTech.
