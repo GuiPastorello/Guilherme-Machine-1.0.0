@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTecher's Machine</title>
+</head>
+ <link rel="stylesheet" href="style.css">
+<body>
+    <main>
+    <h1>Guilherme's Machine</h1>
+
+    <p>Selecione qual o tipo de machine você quer usar?</p>
+
+
+    <select name="Machine" id="machine">
+
+            <option value="ConverterBinario">Converter Binario</option>
+            <option value="ConverterDecimal">Converter Decimal</option>
+            <option value="ConverterHexa">Converter Hexadecimal</option>
+            <option value="ConverterOctal">Converter Octal</option>
+        </select>
+        <br><br>
+    <button onclick="iniciar()">Iniciar</button>
+
+    <div id="div_resultado"></div>
+
+</main>
+</body>
+
+<script>
+    function iniciar(){
+
+        event.preventDefault();
+        let valor = machine.value 
+
+        if (valor == 'ConverterDecimal'){
+        div_resultado.innerHTML=`
+        <br>
+        <hr>
+        <h1>Conversor Decimal</h1>
+
+        <h3>Digite um número decimal:</h3>
+        <input id="demo1" type="text" placeholder="Ex: 42">
+        <br><br>
+
+        <h3>Resultados:</h3>
+        <p>Octal:
+        <div id="octal_id"></div>
+        </p>
+        <p>Hexadecimal:
+        <div id="hexa_id"></div>
+        </p>
+        <p>Binário:
+        <div id="binario_id"></div>
+        </p>
+
+        <button onclick="converter()">Converter</button>
+      `
+      }else if (valor == 'ConverterBinario'){
+        div_resultado.innerHTML=`
+        <br>
+        <hr>
+
+        <h1>Conversor Binario</h1>
+
+        <h3>Digite um número binario:</h3>
+        <input id="demo1" type="text" placeholder="Ex: 10011">
+        <br><br>
+
+        <h3>Resultados:</b></h3>
+        <p>Octal:
+        <div id="octal_id"></div>
+        </p>
+        <p>Hexadecimal:
+        <div id="hexa_id"></div>
+        </p>
+        <p>Decimal:
+        <div id="decimal_id"></div>
+        </p>
+
+        <button onclick="binario()">Converter</button>
+      `
+      }else if (valor == 'ConverterHexa' ) {
+        div_resultado.innerHTML=`
+        <br>
+        <hr>
+        <h1>Conversor Hexadecimal</h1>
+
+        <h3>Digite um número Hexadecimal:</h3>
+        <input id="demo1" type="text" placeholder="Ex: FF2">
+        <br><br>
+
+        <h3><b>Resultados:</b></h3>
+        <p><b>Octal:</b>
+        <div id="octal_id"></div>
+        </p>
+        <p><b>Binario:</b>
+        <div id="binario_id"></div>
+        </p>
+        <p><b>Decimal:</b>
+        <div id="decimal_id"></div>
+        </p>
+
+        <button onclick="hexa()">Converter</button>`
+      }else if (valor == "ConverterOctal"){
+        div_resultado.innerHTML=`
+        <br>
+        <hr>
+        <h1>Conversor Octal</h1>
+
+        <h3>Digite um número octal:</h3>
+        <input id="demo1" type="text" placeholder="Ex: 42">
+        <br><br>
+
+        <h3><b>Resultados:</b></h3>
+        <p><b>Hexadecimal:</b>
+        <div id="hexa_id"></div>
+        </p>
+        <p><b>Binario:</b>
+        <div id="binario_id"></div>
+        </p>
+        <p><b>Decimal:</b>
+        <div id="decimal_id"></div>
+        </p>
+
+        <button onclick="octal()">Converter</button>`
+
+
+      }
+    }
+    function converter() {
+  
+        let decimal = Number(demo1.value);
+
+                octal_id.innerHTML = decimal.toString(8);
+                hexa_id.innerHTML = decimal.toString(16);
+                binario_id.innerHTML = decimal.toString(2);
+        }
+
+    function binario(){
+        let decimalvar= parseInt(demo1.value, 2);
+        
+        octal_id.innerHTML=decimalvar.toString(8);
+        hexa_id.innerHTML = decimalvar.toString(16);
+        decimal_id.innerHTML = decimalvar;
+    }
+    function hexa(){
+        let decimalvar= parseInt(demo1.value, 16);
+        
+            octal_id.innerHTML=decimalvar.toString(8);
+            binario_id.innerHTML = decimalvar.toString(2);
+            decimal_id.innerHTML = decimalvar;
+    }
+
+    function octal(){
+        let decimalvar= parseInt(demo1.value, 8);
+        
+        hexa_id.innerHTML=decimalvar.toString(16);
+        binario_id.innerHTML = decimalvar.toString(2);
+        decimal_id.innerHTML = decimalvar;
+    }
+</script>
+
+</html>
+  
